@@ -10,18 +10,18 @@ namespace Abstraction.Enumerators
 {
     public static class Enumerators
     {
-        public static bool GetEnumDescription(Enum value, out string result)
+        public static string GetEnumDescription(Enum value)
         {
-            result = null;
             FieldInfo info = value.GetType().GetField(value.ToString());
             DescriptionAttribute[] attributes = info.GetCustomAttributes(typeof(DescriptionAttribute), false) as DescriptionAttribute[];
 
-            if (attributes?.Any() != null)
+            if (attributes == null)
             {
-                result = attributes.First().Description;
-                return true;
+                return "";
             }
-            return false;
+
+            return attributes.First().Description;
+
         }
 
     }

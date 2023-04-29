@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Frontend.Views;
+
 namespace Frontend
 {
     public partial class MainViewForm : Form
