@@ -85,11 +85,47 @@ namespace Frontend.Views
                 cmb_ReleaseStatus.Items.IndexOf(Enumerators.GetEnumDescription(_currentAnime.ReleaseStatus));
         }
 
-        private Anime GatherAnimeInfo()
+        private void GatherAnimeInfo()
         {
-            Anime result = new Anime();
+            if (_currentAnime == null) _currentAnime = new Anime();
 
-            return result;
+            _currentAnime.Title = txb_Title.Text;
+            _currentAnime.Description = rtb_Description.Text;
+            _currentAnime.Tags = txb_Tags.Text;
+
+            string[] progress = new string[]
+            {
+                txb_EpisodeCount.Text,
+                txb_EpisodeSeen.Text,
+                txb_SeasonCount.Text,
+                txb_SeasonSeen.Text,
+            };
+            _currentAnime.Progress = string.Join(", ", progress);
+            _currentAnime.WatchStatus =
+                (WatchStatus)Enum.Parse(typeof(WatchStatus), cmb_WatchStatus.Text);
+            _currentAnime.ReleaseStatus =
+                (ReleaseStatus)Enum.Parse(typeof(ReleaseStatus), cmb_ReleaseStatus.Text);
         }
+
+        private void btn_SaveClicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool ValidateInputs()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void btn_DeleteClicked(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void txb_ProgressInputValidator(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

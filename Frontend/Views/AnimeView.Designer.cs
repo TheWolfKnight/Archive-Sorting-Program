@@ -119,6 +119,7 @@
             this.btn_Save.TabIndex = 7;
             this.btn_Save.Text = "Save";
             this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_SaveClicked);
             // 
             // btn_Delete
             // 
@@ -130,6 +131,7 @@
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
             this.btn_Delete.Visible = false;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_DeleteClicked);
             // 
             // txb_EpisodeCount
             // 
@@ -137,6 +139,7 @@
             this.txb_EpisodeCount.Name = "txb_EpisodeCount";
             this.txb_EpisodeCount.Size = new System.Drawing.Size(61, 20);
             this.txb_EpisodeCount.TabIndex = 9;
+            this.txb_EpisodeCount.TextChanged += new System.EventHandler(this.txb_ProgressInputValidator);
             // 
             // txb_EpisodeSeen
             // 
@@ -144,6 +147,7 @@
             this.txb_EpisodeSeen.Name = "txb_EpisodeSeen";
             this.txb_EpisodeSeen.Size = new System.Drawing.Size(61, 20);
             this.txb_EpisodeSeen.TabIndex = 10;
+            this.txb_EpisodeSeen.TextChanged += new System.EventHandler(this.txb_ProgressInputValidator);
             // 
             // txb_SeasonSeen
             // 
@@ -151,6 +155,7 @@
             this.txb_SeasonSeen.Name = "txb_SeasonSeen";
             this.txb_SeasonSeen.Size = new System.Drawing.Size(61, 20);
             this.txb_SeasonSeen.TabIndex = 12;
+            this.txb_SeasonSeen.TextChanged += new System.EventHandler(this.txb_ProgressInputValidator);
             // 
             // txb_SeasonCount
             // 
@@ -158,6 +163,7 @@
             this.txb_SeasonCount.Name = "txb_SeasonCount";
             this.txb_SeasonCount.Size = new System.Drawing.Size(61, 20);
             this.txb_SeasonCount.TabIndex = 11;
+            this.txb_SeasonCount.TextChanged += new System.EventHandler(this.txb_ProgressInputValidator);
             // 
             // lbl_Episode
             // 
@@ -215,6 +221,7 @@
             // 
             // cmb_WatchStatus
             // 
+            this.cmb_WatchStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_WatchStatus.FormattingEnabled = true;
             this.cmb_WatchStatus.Location = new System.Drawing.Point(192, 131);
             this.cmb_WatchStatus.Name = "cmb_WatchStatus";
@@ -223,6 +230,7 @@
             // 
             // cmb_ReleaseStatus
             // 
+            this.cmb_ReleaseStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_ReleaseStatus.FormattingEnabled = true;
             this.cmb_ReleaseStatus.Location = new System.Drawing.Point(192, 170);
             this.cmb_ReleaseStatus.Name = "cmb_ReleaseStatus";
